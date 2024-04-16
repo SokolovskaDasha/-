@@ -1,0 +1,25 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введiть мобiльний номер:");
+
+        string input = Console.ReadLine();
+
+        // Вираз для перевірки формату мобільного номера
+        string pattern = @"^\+?38\s?0\d{2}\s?\d{3}(\s|-)?\d{2}(\s|-)?\d{2}$";
+
+        // Перевірка формату мобільного номера
+        if (Regex.IsMatch(input, pattern))
+        {
+            Console.WriteLine("Формат мобiльного номера вiрний: " + input);
+        }
+        else
+        {
+            Console.WriteLine("Неправильний формат мобiльного номера.");
+        }
+    }
+}
